@@ -1,32 +1,27 @@
 # maitouch-rs485-iot-gateway
 
-A lightweight Python-based RS-485 to MQTT gateway for integrating AI sensing data (e.g., from m’AI Touch) into IoT platforms.
+A robust RS-485 to MQTT gateway for integrating m’AI Touch sensor data into IoT systems using Python.
 
 ## Features
-- Reads RS-485 serial data via USB interface
-- Parses sensor data into structured JSON
-- Publishes real-time messages to MQTT broker
-- Easily integrates with platforms like Node-RED, ThingsBoard, Home Assistant
+- Serial data acquisition via RS-485 (USB converter)
+- Realtime data parsing and JSON conversion
+- Secure and efficient MQTT publishing
+- Logging, error handling, and MQTT reconnect logic
+- Compatible with Node-RED, ThingsBoard, Home Assistant
 
-## Requirements
-- Python 3.x
-- USB-to-RS485 converter
-- MQTT broker (local or cloud)
+## Installation
+```bash
+pip install -r requirements.txt
+```
 
-## Setup
-1. Clone this repo and install dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
+## Usage
+1. Configure `config.json` with serial port and MQTT broker settings.
+2. Run the gateway:
+```bash
+python rs485_receiver.py
+```
 
-2. Configure `config.json` with your serial port and MQTT settings.
-
-3. Run the receiver:
-   ```
-   python rs485_receiver.py
-   ```
-
-## Example RS-485 Data Format
+## Example Data Format
 ```
 ID:01;X:123;Y:456;Z:78
 ```
